@@ -1,4 +1,8 @@
 <resources>
+    <!-- Texts in Spanish -->
     <string name="app_name">IMC_Application</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+
 
 </resources>
