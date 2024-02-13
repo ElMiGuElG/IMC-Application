@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- App Colour Palette  -->
+    <color name="backgroundComponent">#8FBBAF</color>
+    <color name="backgroundComponentSelect">#6F9188</color>
+    <color name="backgroundApp">#6B7B8E</color>
+    <color name="backgroundButton">#ACDEAA</color>
+    <color name="titleText">#ECE5E8</color>
+
 </resources>
