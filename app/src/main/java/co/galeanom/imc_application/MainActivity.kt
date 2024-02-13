@@ -79,4 +79,16 @@ class MainActivity : AppCompatActivity() {
     private fun initSetGenderColor() {
         setGenderColor()
     }
+
+    /* Clase #3
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
+
+
 }
