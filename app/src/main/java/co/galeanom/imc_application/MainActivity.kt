@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import java.text.DecimalFormat
 import kotlin.contracts.Returns
@@ -14,12 +15,21 @@ class MainActivity : AppCompatActivity() {
     //Indicates whether male or female sex was selected.
     private var maleSelect: Boolean = true
     private var femaleSelect: Boolean = false
+    private var Weight:Int = 120
+    private var Age:Int = 20
 
     //Represent views of the user interface
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
     private lateinit var tvHeight:TextView
     private lateinit var rsHeight:RangeSlider
+    private lateinit var btnSubtWeight:FloatingActionButton
+    private lateinit var btnSumWeight:FloatingActionButton
+    private  lateinit var tvWeight:TextView
+    private lateinit var btnSubtAge:FloatingActionButton
+    private lateinit var btnSumAge:FloatingActionButton
+    private lateinit var tvAge:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,6 +44,12 @@ class MainActivity : AppCompatActivity() {
         viewFemale = findViewById(R.id.viewFemale)
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
+        btnSubtWeight = findViewById(R.id.btnSubtWeight)
+        btnSumWeight = findViewById(R.id.btnSumWeight)
+        tvWeight = findViewById(R.id.tvWeight)
+        btnSubtAge = findViewById(R.id.btnSubtAge)
+        btnSumAge = findViewById(R.id.btnSumAge)
+        tvAge = findViewById(R.id.tvAge)
     }
 
     //Place a click listener
@@ -50,6 +66,22 @@ class MainActivity : AppCompatActivity() {
             val DecimalFormat = DecimalFormat("#.##") // Formatear para no tener decinmales
             val Result = DecimalFormat.format(value)
             tvHeight.text = ("$Result cm")
+        }
+        btnSumWeight.setOnClickListener {
+            Weight = Weight +1
+            setWeight()
+        }
+        btnSubtWeight.setOnClickListener {
+            Weight = Weight -1
+            setWeight()
+        }
+        btnSumAge.setOnClickListener {
+            Age = Age +1
+            setAge()
+        }
+        btnSubtAge.setOnClickListener {
+            Age = Age -1
+            setAge()
         }
     }
 
@@ -75,20 +107,20 @@ class MainActivity : AppCompatActivity() {
         return ContextCompat.getColor(this, actualColor) //Method of accessing colour
     }
 
+    //Plus or Sustrain the Value
+    private fun setWeight(){
+        tvWeight.text = Weight.toString()
+    }
+
+    private fun setAge(){
+        tvAge.text = Age.toString()
+    }
+
     //Sets the initial color
     private fun initSetGenderColor() {
         setGenderColor()
+        setWeight()
+        setAge()
     }
-
-    /* Clase #3
-    *
-    *
-    *
-    *
-    *
-    *
-    *
-    * */
-
 
 }
