@@ -205,7 +205,8 @@
                 android:layout_height="wrap_content"
                 android:stepSize="1"
                 android:valueFrom="140"
-                android:valueTo="200" />
+                android:valueTo="200"
+                />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
